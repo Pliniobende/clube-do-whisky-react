@@ -1,0 +1,26 @@
+.carousel-inner{
+    display: flex;
+    align-items: center;
+    height: 600px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.carousel-inner > .carousel-item img{
+    display: flex;
+    align-items: center;
+    height: 600px;
+    object-fit: cover;
+    margin: 0 auto;
+    
+}
+.carousel-inner > .carousel-item > .carousel-caption h3{
+    color: red;
+
+}
+
+
+.carousel-inner > .carousel-item > .carousel-caption p{
+    color: red;
+
+}
