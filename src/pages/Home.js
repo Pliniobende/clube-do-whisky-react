@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import Navbar from '../components/Navbar'
-import Sidebar from '../components/Sidebar'
+import Navbar from '../components/Navbar';
+import Sidebar from '../components/Sidebar';
+import CarouselW from '../components/Carousel'
+
 
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +14,9 @@ const Home = () => {
         <>
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <Navbar toggle={toggle} />
-            
+        <CarouselW />
         </>
     )
 }
 
-export default Home
+export default Home;
