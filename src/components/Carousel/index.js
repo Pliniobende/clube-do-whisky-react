@@ -15,50 +15,42 @@ function CarouselW() {
   <Carousel.Item>
     <img
       src={categoria1}
-      
-      alt="First slide"
-      
+      alt="Bourbon"
     />
     <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <h3>Bourbon</h3>
+      <p>O bourbon é um whiskey americano feito de grãos maltados, dos quais no mínimo 51% da composição é milho. As regras que regem o bourbon são menos rígidas que as do Escocês, porém ele deve ser totalmente fabricado nos Estados Unidos para ser qualificado como Bourbon.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
-     
       src={categoria2}
-      alt="Second slide"
+      alt="Straight Bourbon"
     />
-
     <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3>Straight Bourbon</h3>
+      <p>Esse é um bourbon de um estado Americano, Kentucky por exemplo, que foi envelhecido por no mínimo 2 anos e não contém aditivos, tais como sabores ou corantes.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
-   
       src={categoria3}
-      alt="Third slide"
+      alt="Rye"
     />
-
     <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <h3>Rye</h3>
+      <p>O rye é fabricado especialmente na América do Norte. Nos Estados Unidos, ele deve ser fermentado a partir de uma mistura de grãos maltados que contenha pelo menos 51% de centeio. As regras sobre o rye canadense são bem menos rígidas e a bebida pode conter muito menos do que 51% de centeio.</p>
     </Carousel.Caption>
   </Carousel.Item>
 
   <Carousel.Item>
     <img
-   
       src={categoria4}
-      alt="Third slide"
+      alt="Whiskey Escocês"
     />
-
     <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <h3>Whiskey Escocês</h3>
+      <p>Também conhecido como Scotch, são produzidos apenas na Escócia. O termo Scotch é protegido por legislação e só pode ser usado para bebidas produzidas no país, assim como a cachaça no Brasil.</p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
