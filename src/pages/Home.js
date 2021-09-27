@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import CarouselW from '../components/Carousel';
 import Manifesto from '../components/Manifesto';
+import Footer from '../components/Footer';
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
         <Navbar toggle={toggle} />
         <CarouselW />
         <Manifesto />
+        <Footer />
         </>
     )
 }
