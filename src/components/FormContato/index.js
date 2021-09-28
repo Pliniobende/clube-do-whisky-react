@@ -1,51 +1,88 @@
-import React from 'react';
-import { Formik, Form } from 'formik';
-import { TextField } from '../TextField';
-import * as Yup from 'yup';
-import './FormContato.css'
+import React, { useEffect } from "react";
 
-export const Signup = () => {
-  const validate = Yup.object({
-    firstName: Yup.string()
-      .max(15, 'Must be 15 characters or less')
-      .required('Required'),
-    lastName: Yup.string()
-      .max(20, 'Must be 20 characters or less')
-      .required('Required'),
-    email: Yup.string()
-      .email('Email is invalid')
-      .required('Email is required'),
-    password: Yup.string()
-      .min(6, 'Password must be at least 6 charaters')
-      .required('Password is required'),
-    confirmPassword: Yup.string()
-      .oneOf([Yup.ref('password'), null], 'Password must match')
-      .required('Confirm password is required'),
-  })
+import { Formik, Form, useField, useFormikContext } from "formik";
+import * as Yup from "yup";
+
+import "./styles.css";
+
+
+const MyTextInput = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
   return (
-    <Formik
-      initialValues={{
-        firstName: '',
-        email: '',
-        message:''
-      }}
-      validationSchema={validate}
-      onSubmit={values => {
-        console.log(values)
-      }}
-    >
-      {formik => (
-        <div>
-          <h1 className="my-1 font-weight-bold .display-1">Contato</h1>
-          <Form>
-            <TextField label="Nome" name="firstName" type="text" />
-            <TextField label="Email" name="email" type="email" />
-            <TextField label="Mensagem" name="message" type="text" />
-            <button className="btn btn-light mt-3" type="submit">Register</button>
-          </Form>
-        </div>
-      )}
-    </Formik>
-  )
-}
-export default Signup;
+    <>
+      <label htmlFor={props.id || props.name}>{label}</label>
+      <input className="text-input" {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <div className="error">{meta.error}</div>
+      ) : null}
+    </>
+  );
+};
+const MyTextArea = ({label, ...props}) => {
+    const [field, meta] = useField(props);
+    return (
+        <>
+            <label htmlFor={props.id || props.name}>{label}</label>
+            <textarea className="text-area" {...field} {...props} />
+            {meta.touched && meta.error ? (
+                <div className="error">{meta.error}</div>
+            ) : null}
+        </>
+    );
+  };
+
+
+export const SignupForm = () => {
+  return (
+    <>
+      <h1>Contato</h1>
+      <Formik
+        initialValues={{
+          Nome: "",
+          email: "",
+          message: "",
+        }}
+        validationSchema={Yup.object({
+          Nome: Yup.string()
+            .min(3, "Nome precisa de no mínimo 3 caracteres")
+            .required("Esse campo não pode ser vazio"),
+            email: Yup.string()
+            .email("Email invalido")
+            .required("Esse campo não pode ser vazio"),
+          message: Yup.string()
+            .min(3, "Mensagem precisa de no mínimo 3 caracteres")
+            .required("Esse campo não pode ser vazio")
+        })}
+        onSubmit={async (values, { setSubmitting }) => {
+          await new Promise(r => setTimeout(r, 500));
+          setSubmitting(false);
+        }}
+      >
+        <Form>
+          <MyTextInput
+            label="Nome"
+            name="Nome"
+            type="text"
+            placeholder="Insira seu nome"
+          />
+          <MyTextInput
+            label="Email"
+            name="email"
+            type="email"
+            placeholder="email@email.com"
+          />
+          <MyTextArea
+            label="Message"
+            name="message"
+            type="text-area"
+            rows="6"
+            placeholder="Insira sua Mensagem"
+          />
+          <button type="submit">Submit</button>
+        </Form>
+      </Formik>
+    </>
+  );
+};
+
+export default SignupForm;
