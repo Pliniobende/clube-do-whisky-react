@@ -35,7 +35,7 @@ const MyTextArea = ({label, ...props}) => {
 export const SignupForm = () => {
   return (
     <>
-      <h1>Contato</h1>
+      
       <Formik
         initialValues={{
           Nome: "",
@@ -58,7 +58,10 @@ export const SignupForm = () => {
           setSubmitting(false);
         }}
       >
+        
+       
         <Form>
+        <h2>Contato</h2>
           <MyTextInput
             label="Nome"
             name="Nome"
@@ -80,6 +83,7 @@ export const SignupForm = () => {
           />
           <button type="submit">Submit</button>
         </Form>
+        
       </Formik>
     </>
   );

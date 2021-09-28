@@ -19,7 +19,7 @@ const Navbar = ({ toggle }) => {
                        <NavLinks to='home'>Home</NavLinks>
                         <NavLinks to='manifesto'>Manifesto</NavLinks>
                         <NavLinks to='categorias'>Categorias</NavLinks>
-                        <NavLinks to='signin'>Sign in</NavLinks>
+                        <NavLinks to='signin'>Contato</NavLinks>
                     </NavItem>
                 </NavMenu>
                 <NavBtn>
