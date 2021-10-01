@@ -6,7 +6,7 @@ import { ErrorMessage, Formik, Form as FormikForm, Field } from 'formik'
 
 
 const validations = yup.object().shape({
-    user: yup.string().min(6).required(),
+    name: yup.string().min(6).required(),
     email: yup.string().email().required(),
     password: yup.string().min(6).required()
 })
@@ -15,8 +15,8 @@ const Form = ({ handleSubmit, initialValues }) => (
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={validations}>
         <FormikForm className="Form">
             <div className="Form-Group">
-                <Field className="Form-Field" name="user" placeholder="Nome do usuário" type="text"/>
-                <ErrorMessage className="Form-Error" component="span" name="user"/>
+                <Field className="Form-Field" name="name" placeholder="Nome do usuário" type="text"/>
+                <ErrorMessage className="Form-Error" component="span" name="name"/>
             </div>
             <div className="Form-Group">
                 <Field className="Form-Field" name="email" placeholder="E-mail do usuário" type="text"/>

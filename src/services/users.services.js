@@ -2,7 +2,7 @@ import api from './api';
 
 class DataService {
 
-    create(data) {
+    signup(data) {
         return api.post('/users', data);
     }
 }
