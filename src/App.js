@@ -6,8 +6,10 @@ import Navbar from './components/Navbar'
 import CarouselW from './components/Carousel';
 import Manifesto from './components/Manifesto';
 import Footer from './components/Footer';
+import FormSignUp from './components/FormSignUp';
 
-
+const handleSubmit = values => alert(JSON.stringify(values))
+const initialValues = {}
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,11 +18,12 @@ function App() {
   }
   return (
     <Router>  
-        <Sidebar isOpen={isOpen} toggle={toggle} />
+        <FormSignUp handleSubmit={handleSubmit} initialValues={initialValues}/>
+        {/* <Sidebar isOpen={isOpen} toggle={toggle} />
         <Navbar toggle={toggle}  />
         <CarouselW />
         <Manifesto />
-        <Footer />
+        <Footer /> */}
     </Router>
   );
 }
