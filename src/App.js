@@ -1,27 +1,12 @@
 import './App.css';
 import React, {useState} from 'react';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar'
 import CarouselW from './components/Carousel';
 import Manifesto from './components/Manifesto';
 import Footer from './components/Footer';
-import FormSignUp from './components/FormSignUp';
-import usersServices from './services/users.services';
-
-const handleSubmit = values => {
-  console.log(values);
-  usersServices.signup(values)
-  .then(response => {
-    alert('Usuario cadastrado com sucesso!');
-  })
-  .catch(e => {
-    e.response.data ? alert(e.response.data) : alert(e);
-    console.log(e);
-  })
-}
-// const handleSubmit = values => {alert(JSON.stringify(values))}
-const initialValues = {}
+import SignupForm from './components/FormSignUp';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,12 +15,15 @@ function App() {
   }
   return (
     <Router>  
-        <FormSignUp handleSubmit={handleSubmit} initialValues={initialValues}/>
-        {/* <Sidebar isOpen={isOpen} toggle={toggle} />
+        <Sidebar isOpen={isOpen} toggle={toggle} />
         <Navbar toggle={toggle}  />
-        <CarouselW />
-        <Manifesto />
-        <Footer /> */}
+        {/* <CarouselW />
+        <Manifesto /> */}
+        
+
+        <Route path="/user/signup"><SignupForm /></Route>
+
+        <Footer />
     </Router>
   );
 }

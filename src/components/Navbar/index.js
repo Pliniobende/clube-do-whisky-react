@@ -2,6 +2,7 @@ import React from "react";
 import { FaBars} from 'react-icons/fa';
 import logo from '../../images/Logo.png'
 import { Nav, NavbarContainer, NavbarLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './Navbar.styles';
+import { Link } from "react-router-dom";
 
 const Navbar = ({ toggle }) => {
     return (
@@ -23,7 +24,7 @@ const Navbar = ({ toggle }) => {
                     </NavItem>
                 </NavMenu>
                 <NavBtn>
-                    <NavBtnLink to="/signin">Sign In</NavBtnLink>
+                    <Link to="/user/signup">Sign In</Link>
                 </NavBtn>
             </NavbarContainer>
         </Nav>
