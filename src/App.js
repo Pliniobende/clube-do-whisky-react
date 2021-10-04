@@ -11,6 +11,7 @@ import { AuthConext } from './context/auth-context';
 import Switch from 'react-bootstrap/esm/Switch';
 import FormSignUp from './components/FormSignUp';
 import usersServices from './services/users.services';
+import Brands from './components/Brands';
 
 
 const handleSubmit = values => {
@@ -54,6 +55,7 @@ function App() {
           <Navbar toggle={toggle}  />
           <CarouselW />
           <Manifesto />
+          <Brands />
           <Footer />
       </Router>
     </AuthConext.Provider>
