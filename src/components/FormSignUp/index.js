@@ -18,9 +18,8 @@ const initialValues = {}
 
 export default () => {
     return (
-        <div>
-            <Form handleSubmit={handleSubmit} initialValues={initialValues}/>
-        </div>
+      <>
+        <Form handleSubmit={handleSubmit} initialValues={initialValues}/>
+      </>
     )
 }
-//export default Form;

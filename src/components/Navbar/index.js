@@ -9,18 +9,18 @@ const Navbar = ({ toggle }) => {
         <>
         <Nav>
             <NavbarContainer>
-                <NavbarLogo to="/home">
-                    <img src={logo} alt="Logo"/>
-                </NavbarLogo>
+                <Link to="/home">
+                    <img src={logo} alt="Logo" height="150px"/>
+                </Link>
                 <MobileIcon onClick={toggle}>
                     <FaBars />
                 </MobileIcon>
                 <NavMenu>
                     <NavItem>
-                       <NavLinks to='home'>Home</NavLinks>
-                        <NavLinks to='manifesto'>Manifesto</NavLinks>
-                        <NavLinks to='categorias'>Categorias</NavLinks>
-                        <NavLinks to='signin'>Contato</NavLinks>
+                        <NavLinks to='/home'>Home</NavLinks>
+                        <NavLinks to='/manifesto'>Manifesto</NavLinks>
+                        <NavLinks to='/categories'>Categorias</NavLinks>
+                        <NavLinks to='/signin'>Contato</NavLinks>
                     </NavItem>
                 </NavMenu>
                 <NavBtn>

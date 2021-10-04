@@ -1,11 +1,10 @@
 import './App.css';
 import React, {useState} from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar'
-import CarouselW from './components/Carousel';
-import Manifesto from './components/Manifesto';
 import Footer from './components/Footer';
+import Home from './components/Home';
 import SignupForm from './components/FormSignUp';
 
 function App() {
@@ -16,10 +15,9 @@ function App() {
   return (
     <Router>  
         <Sidebar isOpen={isOpen} toggle={toggle} />
-        <Navbar toggle={toggle}  />
-        {/* <CarouselW />
-        <Manifesto /> */}
-        
+        <Navbar toggle={toggle}  />    
+
+        <Route path="/home"><Home /></Route>   
 
         <Route path="/user/signup"><SignupForm /></Route>
 
