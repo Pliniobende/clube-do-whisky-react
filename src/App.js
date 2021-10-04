@@ -21,6 +21,7 @@ const handleSubmit = values => {
   })
 }
 // const handleSubmit = values => {alert(JSON.stringify(values))}
+// descomentei a linha acima para poder rodar o login... nao sei se vai rodar--- Jose Luis
 const initialValues = {}
 
 function App() {
@@ -39,6 +40,12 @@ function App() {
     </Router>
   );
 }
+// const App = ()=>(
+  
+//   <div className="App">
+//     <Login handleSubmit = {handleSubmit} initialValues = {initialValues}></Login>
+//   </div>
+// )
 
 export default App;
 
