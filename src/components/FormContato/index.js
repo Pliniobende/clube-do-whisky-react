@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 
-import { Formik, Form, useField, useFormikContext } from "formik";
+import { Formik, Form, useField } from "formik";
 import * as Yup from "yup";
-
+import axios from "axios";
 import "./styles.css";
+import api from "../../services/api";
 
 
 const MyTextInput = ({ label, ...props }) => {
@@ -33,6 +34,8 @@ const MyTextArea = ({label, ...props}) => {
 
 
 export const SignupForm = () => {
+
+
   return (
     <>
       
@@ -43,23 +46,23 @@ export const SignupForm = () => {
           message: "",
         }}
         validationSchema={Yup.object({
-          Nome: Yup.string()
-            .min(3, "Nome precisa de no mínimo 3 caracteres")
+          nome: Yup.string()
+            .min(5, "Nome precisa de no mínimo 5 caracteres")
             .required("Esse campo não pode ser vazio"),
             email: Yup.string()
             .email("Email invalido")
             .required("Esse campo não pode ser vazio"),
           message: Yup.string()
-            .min(3, "Mensagem precisa de no mínimo 3 caracteres")
+            .min(10, "Mensagem precisa de no mínimo 10 caracteres")
             .required("Esse campo não pode ser vazio")
         })}
         onSubmit={async (values, { setSubmitting }) => {
           await new Promise(r => setTimeout(r, 500));
           setSubmitting(false);
         }}
-      >
-        
-       
+
+        >   
+     
         <Form>
         <h2>Contato</h2>
           <MyTextInput
@@ -83,10 +86,10 @@ export const SignupForm = () => {
           />
           <button type="submit">Submit</button>
         </Form>
-        
       </Formik>
     </>
   );
+  
 };
 
 export default SignupForm;
