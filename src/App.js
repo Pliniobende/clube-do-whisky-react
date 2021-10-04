@@ -59,7 +59,6 @@ function App() {
     </AuthConext.Provider>
 )
    
-
+}
 export default App;
-
 
