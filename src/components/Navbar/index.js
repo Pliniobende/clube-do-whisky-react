@@ -1,9 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
+
 import { FaBars} from 'react-icons/fa';
 import logo from '../../images/Logo.png'
-import { Nav, NavbarContainer, NavbarLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './Navbar.styles';
+import { Nav, NavbarContainer, NavbarLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink, NavDropdownMenu} from './Navbar.styles';
+
+import  Dropdown from '../DropdownMenu';
 
 const Navbar = ({ toggle }) => {
+    const [dropDown, setDropDown] = useState(false);
+    const toggledropdown = () =>{
+        setDropDown(!dropDown);
+    }
     return (
         <>
         <Nav>
@@ -18,7 +25,9 @@ const Navbar = ({ toggle }) => {
                     <NavItem>
                        <NavLinks to='home'>Home</NavLinks>
                         <NavLinks to='manifesto'>Manifesto</NavLinks>
-                        <NavLinks to='categorias'>Categorias</NavLinks>
+                        <NavDropdownMenu to='categorias' onMouseEnter= { toggledropdown } onMouseLeave= { toggledropdown }>Categorias
+                        </NavDropdownMenu>
+                        {dropDown && <Dropdown />}
                         <NavLinks to='signin'>Contato</NavLinks>
                     </NavItem>
                 </NavMenu>
