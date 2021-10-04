@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link as LinkR} from 'react-router-dom';
 import { Link as LinkS} from 'react-scroll';
-import { FaCaretDown } from 'react-icons/fa';
+import { FaUserCheck } from 'react-icons/fa';
 
 export const Nav = styled.nav`
     background: #000;
@@ -73,6 +73,13 @@ export const MobileIcon = styled.div`
         color: #fff;
     }
   
+`;
+
+export const UserIcon = styled(FaUserCheck)`
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
 `;
 
 
