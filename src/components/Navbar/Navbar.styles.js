@@ -18,6 +18,21 @@ export const Nav = styled.nav`
     }
 `;
 
+export const NavDropdownMenu = styled.nav`
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    cursor: pointer;
+    &.active{
+        border-bottom: 3px solid #ee9b00;
+    }
+
+`;
+
+
+
 export const NavbarContainer = styled.div`
     display: flex;
     justify-content: space-between;
