@@ -1,0 +1,67 @@
+.navbar-brand img {
+    width: 100px;
+    height: 100px;
+}
+
+.navbar-collapse {
+   margin-left: 150px;
+}
+
+.me-auto.navbar-nav a {
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+.bg-dark {
+    background-color: black !important;
+}
+
+
+.navbar-dark .navbar-nav .nav-link {
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: yellow;
+    font-weight: bold;
+}
+
+.navbar-nav button {
+    color: whitesmoke;
+    background-color: black;
+    font-weight: bold;
+    font-size: 18px;
+    width: 100px;
+    border-radius: 30px;
+}
+
+.navbar-nav button:hover {
+    background-color: yellow;
+    color: black;
+    cursor: pointer !important;
+}
+
+.navbar-dark .navbar-toggler {
+    background-color: black
+}
+
+.navbar-nav .dropdown-menu {
+    background: rgba( 239, 234, 234, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.navbar-nav .dropdown-menu a {
+    margin-left: 0;
+   
+}
+
+@media (min-width: 768px){
+    .navbar-nav button {
+        width: 100px;
+    }
+}

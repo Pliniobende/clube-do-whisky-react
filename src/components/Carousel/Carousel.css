@@ -1,12 +1,6 @@
-.carousel-slide{
+.carousel.slide{
     display: flex;
-    align-items: center;
-    height: 800px;
-}
-.carousel-slide > .carousel-indicators{
-
-      background-color: red;
-
+    justify-content: center;
 }
 
 .carousel-inner{
@@ -23,30 +17,31 @@
 }
 
 .carousel-inner > .carousel-item > .carousel-caption{
-    width: 600px;
+    width: 800px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 19px );
     -webkit-backdrop-filter: blur( 19px );
     border-radius: 10px;
 }
 .carousel-inner > .carousel-item > .carousel-caption h3{
+    margin-top: 15px;
     color: white;
-    background: rgba( 10, 10, 10, 0.55 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 19px );
-    -webkit-backdrop-filter: blur( 19px );
-    border-radius: 10px;
-   
-
 }
 .carousel-inner > .carousel-item > .carousel-caption p{
     color: white;
-    background: rgba( 10, 10, 10, 0.55 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 19px );
-    -webkit-backdrop-filter: blur( 19px );
-    border-radius: 10px;
+    width: 600px;
+    height: 150px;
+
+}
+
+@media only screen and (max-width: 480px) {
+    .carousel-inner > .carousel-item img{
+        max-width: 80%;
+    }
+    .carousel-inner > .carousel-item > .carousel-caption{
+        display: none;
+    }
 }
