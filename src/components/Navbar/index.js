@@ -1,94 +1,39 @@
-import React, {useState, useContext, useCallback } from "react";
-
-import { FaBars, FaUserCheck } from 'react-icons/fa';
+import React from 'react';
 import logo from '../../images/Logo.png'
-import { Nav, NavbarContainer, NavbarLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink, NavDropdownMenu, UserIcon } from './Navbar.styles';
-import  Dropdown from '../DropdownMenu';
-import { AuthConext } from "../../context/auth-context";
+import { Navbar, NavDropdown, Container, Nav, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Navbar.css';
 
-const Navbar = ({ toggle }) => {
-    const [dropDown, setDropDown] = useState(false);
-    const toggledropdown = () =>{
-        setDropDown(!dropDown);
-    };
-    const auth = useContext(AuthConext);
- 
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
-
-  const login = useCallback(() => {
-    setIsLoggedIn(true);
-  }, []);
-
-  const logout = useCallback(() => {
-    setIsLoggedIn(false);
-  }, []);
-
-  let routes;
-console.log(isLoggedIn);
-  if(isLoggedIn){
-      routes=(
-          <>
-        <NavbarLogo to="/home">
-        <img src={logo} alt="Logo"/>
-    </NavbarLogo>
-    <MobileIcon onClick={toggle}>
-        <FaBars />
-    </MobileIcon>
-    <NavMenu>
-        <NavItem>
-           <NavLinks to='home'>Home</NavLinks>
-            <NavLinks to='manifesto'>Manifesto</NavLinks>
-            <NavDropdownMenu to='categorias' onMouseEnter= { toggledropdown } onMouseLeave= { toggledropdown }>Categorias
-            </NavDropdownMenu>
-            {dropDown && <Dropdown />}
-            <NavLinks to='signin'>Contato</NavLinks>
-        </NavItem>
-
-    </NavMenu>
-    <NavBtn>
-        <UserIcon >
-            <FaUserCheck />
-        </UserIcon>
-    </NavBtn>
-
-    </>
-      )
-  }else{
-    routes=(
-      <>
-    <NavbarLogo to="/home">
-    <img src={logo} alt="Logo"/>
-</NavbarLogo>
-<MobileIcon onClick={toggle}>
-    <FaBars />
-</MobileIcon>
-<NavMenu>
-    <NavItem>
-       <NavLinks to='home'>Home</NavLinks>
-        <NavLinks to='manifesto'>Manifesto</NavLinks>
-        <NavDropdownMenu to='categorias' onMouseEnter= { toggledropdown } onMouseLeave= { toggledropdown }>Categorias
-        </NavDropdownMenu>
-        {dropDown && <Dropdown />}
-        <NavLinks to='signin'>Contato</NavLinks>
-    </NavItem>
-</NavMenu>
-<NavBtn>
-    <NavBtnLink to="/signin">Sign In</NavBtnLink>
-</NavBtn>
-</>)
-  }
-
+const NavbarPage = () => {
     return (
         <>
-        <AuthConext.Provider value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}>
-        <Nav>
-            <NavbarContainer>
-                {routes}
-            </NavbarContainer>
-        </Nav>
-        </AuthConext.Provider>
+          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Container>
+            <Navbar.Brand href="#home"><img src={logo} alt="Logo"/></Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="me-auto">
+                <Nav.Link href="#home">Home</Nav.Link>
+                <Nav.Link href="#manifesto">Manifesto</Nav.Link>
+                <NavDropdown title="Categoria" id="collasible-nav-dropdown">
+                  <NavDropdown.Item href="#bourbon">Bourbon</NavDropdown.Item>
+                  <NavDropdown.Item href="#straightbourbon">Straight Bourbon</NavDropdown.Item>
+                  <NavDropdown.Item href="#rye">Rye</NavDropdown.Item>
+                  <NavDropdown.Item href="#whiskeyescoces">Whiskey Escocês</NavDropdown.Item>
+                </NavDropdown>
+                <Nav.Link href="#contato">Contato</Nav.Link>
+              </Nav>
+              <Nav>
+                <Button variant="dark">Sign in</Button>
+              </Nav>
+            </Navbar.Collapse>
+            </Container>
+          </Navbar>
+                      
         </>
-    );
-};
+    )
+}
 
-export default Navbar;
+export default NavbarPage;
+
+

@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { Formik, Form, useField } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import "./styles.css";
+import "./FormContato.css";
 import api from "../../services/api";
 
 
@@ -31,7 +31,6 @@ const MyTextArea = ({label, ...props}) => {
         </>
     );
   };
-
 
 export const SignupForm = () => {
 
