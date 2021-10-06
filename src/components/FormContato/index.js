@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Formik, Form, useField } from "formik";
 import * as Yup from "yup";
@@ -31,24 +31,27 @@ const MyTextArea = ({label, ...props}) => {
         </>
     );
   };
+  const handleSubmit = async (values) => {
+    const response = await axios.post('http://localhost:8080/api/v1/prospects', values)
+    .catch((err) => {
+      if (err & err.message) console.log(err)
+    })
+  }
 
 export const SignupForm = () => {
-
-
   return (
     <>
-      
       <Formik
         initialValues={{
-          Nome: "",
+          name: "",
           email: "",
           message: "",
         }}
         validationSchema={Yup.object({
-          nome: Yup.string()
+          name: Yup.string()
             .min(5, "Nome precisa de no mínimo 5 caracteres")
             .required("Esse campo não pode ser vazio"),
-            email: Yup.string()
+          email: Yup.string()
             .email("Email invalido")
             .required("Esse campo não pode ser vazio"),
           message: Yup.string()
@@ -56,17 +59,20 @@ export const SignupForm = () => {
             .required("Esse campo não pode ser vazio")
         })}
         onSubmit={async (values, { setSubmitting }) => {
-          await new Promise(r => setTimeout(r, 500));
+          await axios.post('http://localhost:8080/api/v1/prospects', values)
+          .then (console.log(values))
+          .catch((err) => {
+              console.log(err)
+          });
           setSubmitting(false);
         }}
-
-        >   
-     
+        
+        >
         <Form>
         <h2>Contato</h2>
           <MyTextInput
             label="Nome"
-            name="Nome"
+            name="name"
             type="text"
             placeholder="Insira seu nome"
           />

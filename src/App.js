@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useState, useCallback } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Sidebar from "./components/Sidebar old";
 import NavbarPage from "./components/Navbar";
 import CarouselW from "./components/Carousel";
 import Manifesto from "./components/Manifesto";
@@ -11,6 +10,7 @@ import Switch from "react-bootstrap/esm/Switch";
 import FormSignUp from "./components/FormSignUp";
 import usersServices from "./services/users.services";
 import Brands from "./components/Brands";
+import FormAvaliacao from "./components/FormAvaliacao";
 
 const handleSubmit = (values) => {
   console.log(values);
@@ -53,6 +53,7 @@ function App() {
         <CarouselW />
         <Manifesto />
         <Brands />
+        <FormAvaliacao />
         <Footer />
       </Router>
     </AuthConext.Provider>
