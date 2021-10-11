@@ -21,6 +21,7 @@ const MyTextInput = ({ label, ...props }) => {
 };
 const MyTextArea = ({label, ...props}) => {
     const [field, meta] = useField(props);
+    console.log(field)
     return (
         <>
             <label htmlFor={props.id || props.name}>{label}</label>
@@ -31,12 +32,6 @@ const MyTextArea = ({label, ...props}) => {
         </>
     );
   };
-  const handleSubmit = async (values) => {
-    const response = await axios.post('http://localhost:8080/api/v1/prospects', values)
-    .catch((err) => {
-      if (err & err.message) console.log(err)
-    })
-  }
 
 export const SignupForm = () => {
   return (
@@ -60,12 +55,14 @@ export const SignupForm = () => {
         })}
         onSubmit={async (values, { setSubmitting }) => {
           await axios.post('http://localhost:8080/api/v1/prospects', values)
+
           .then (console.log(values))
           .catch((err) => {
               console.log(err)
           });
           setSubmitting(false);
-        }}
+        }
+}
         
         >
         <Form>
