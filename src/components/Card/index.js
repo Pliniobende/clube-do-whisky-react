@@ -1,21 +1,17 @@
 import React from "react";
+import Grid from "../Grid";
 
 import { Link } from "react-router-dom";
 
-import { Image } from './Card.styles'
+import { Image, Detalhe } from './Card.styles';
 
 
-const Card = ({ image, clickable }) => (
+const Card = props => (
     <>
-        {clickable ? (
-            <Link to={'#'}>
-        
-        <Image src= {image} alt="sample"/>
-        </Link>
-        ) : (
-            <Image src= {image} alt="sample"/>
-        )}
-
+        <Grid>
+            <Image src= {props.image} alt="sample"/>
+            <p>{props.descricao}</p>
+        </Grid>
     </>
 );
 

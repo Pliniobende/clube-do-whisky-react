@@ -1,17 +1,36 @@
-import React from 'react';
+import React, {useEffect, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import categoria1 from '../../images/Categoria1.jpeg';
 import categoria2 from '../../images/Categoria2.jpeg';
 import categoria3 from '../../images/Categoria3.jpeg';
 import categoria4 from '../../images/Categoria4.jpg';
+import axios from 'axios';
 import './Carousel.css'
 
 
 function CarouselW() {
+  const [categories, setCategories] = useState();
+
+  useEffect(() => {
+    const fetchCategories = async() => {
+        try{
+            const response = await axios.get('http://localhost:8080/api/v1/categories')
+            setCategories(response.data);
+        }catch(err){
+            console.log(err.response.data)
+        }
+   
+    }
+    fetchCategories();
+
+},[]) 
+
   return (
     <>
+ 
   <Carousel>
+  
   <Carousel.Item>
     <img
       src={categoria1}

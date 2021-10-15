@@ -1,16 +1,17 @@
 import "./App.css";
 import React, { useState, useCallback } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavbarPage from "./components/Navbar";
 import CarouselW from "./components/Carousel";
 import Manifesto from "./components/Manifesto";
 import Footer from "./components/Footer";
 import { AuthConext } from "./context/auth-context";
-import Switch from "react-bootstrap/esm/Switch";
+
 import FormSignUp from "./components/FormSignUp";
 import usersServices from "./services/users.services";
-import Brands from "./components/Brands";
 import FormAvaliacao from "./components/FormAvaliacao";
+import NovoCarrossel from "./components/novoCarrossel";
+import Categorias from "./components/Categorias";
 
 const handleSubmit = (values) => {
   console.log(values);
@@ -48,13 +49,16 @@ function App() {
       value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
     >
       <Router>
+        
         <FormSignUp handleSubmit={handleSubmit} initialValues={initialValues} />
+   
         <NavbarPage />
-        <CarouselW />
+        <NovoCarrossel />
         <Manifesto />
-        <Brands />
+        <Categorias />
         <FormAvaliacao />
         <Footer />
+        
       </Router>
     </AuthConext.Provider>
   );
