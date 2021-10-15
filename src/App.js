@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import SignupForm from "./components/FormSignUp";
+import SigninForm from "./components/FormSignIn";
 import { UserContext } from "./providers/user";
 
 function App() {
@@ -17,11 +18,6 @@ function App() {
 
   return (
     <Router>
-      <h1>
-        {" "}
-        valores = {user.name}, {user.token} !
-      </h1>
-
       <Navbar />
 
       <Route path="/home">
@@ -30,6 +26,10 @@ function App() {
 
       <Route path="/user/signup">
         <SignupForm />
+      </Route>
+
+      <Route path="/user/signin">
+        <SigninForm />
       </Route>
 
       <Footer />
