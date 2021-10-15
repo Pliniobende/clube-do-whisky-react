@@ -19,6 +19,7 @@
     "reactstrap": "^8.10.0",
     "styled-components": "^5.3.1",
     "web-vitals": "^2.1.0",
+    "yarn": "^1.22.15",
     "yup": "^0.32.9"
   },
   "scripts": {
