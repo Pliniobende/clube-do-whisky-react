@@ -21,6 +21,3 @@ export const Image = styled.img`
         }
     }
 `;
-export const Detalhe = styled.div`
-color: white;
-`

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { Formik, Form, useField } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import "./FormContato.css";
-import api from "../../services/api";
+
 
 
 const MyTextInput = ({ label, ...props }) => {

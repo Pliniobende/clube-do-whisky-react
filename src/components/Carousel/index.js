@@ -10,22 +10,7 @@ import './Carousel.css'
 
 
 function CarouselW() {
-  const [categories, setCategories] = useState();
-
-  useEffect(() => {
-    const fetchCategories = async() => {
-        try{
-            const response = await axios.get('http://localhost:8080/api/v1/categories')
-            setCategories(response.data);
-        }catch(err){
-            console.log(err.response.data)
-        }
-   
-    }
-    fetchCategories();
-
-},[]) 
-
+  
   return (
     <>
 

@@ -13,7 +13,7 @@ export default () => {
       .signup(values)
       .then((response) => {
         console.log(response);
-        if (response.status == 201 && response.data.auth) {
+        if (response.status === 201 && response.data.auth) {
           setUser({
             auth: response.data.auth,
             name: response.data.name,

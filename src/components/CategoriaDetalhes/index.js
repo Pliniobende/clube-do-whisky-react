@@ -1,5 +1,4 @@
 import React from 'react';
-import CategoriaItems from '../CategoriaItems';
 import Card from '../Card'
 const CategoriaDetalhes = props => {
 
