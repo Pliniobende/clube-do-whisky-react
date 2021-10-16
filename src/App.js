@@ -8,7 +8,7 @@ import { AuthConext } from "./context/auth-context";
 
 import FormSignUp from "./components/FormSignUp";
 import usersServices from "./services/users.services";
-import FormAvaliacao from "./components/FormAvaliacao";
+import Avaliacao from "./components/Avaliacao";
 import NovoCarrossel from "./components/novoCarrossel";
 import Categorias from "./components/Categorias";
 
@@ -53,7 +53,7 @@ function App() {
        
         <Manifesto />
         <Categorias />
-        <FormAvaliacao />
+        <Avaliacao />
         <Footer />
         
       </Router>
