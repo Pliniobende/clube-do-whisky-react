@@ -10,6 +10,7 @@ const Card = props => (
         <Grid>
             <Image src= {props.image} alt="sample"/>
             <p>{props.descricao}</p>
+            <button type="submit">Avaliar</button>
         </Grid>
     </>
 );
