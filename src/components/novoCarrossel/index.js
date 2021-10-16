@@ -77,7 +77,7 @@ const NovoCarrossel = (props) => {
         onExited={() => setAnimating(false)}
         key={categorie.id}
       >
-        <img src={categoria1} />
+        <img src={categorie.image} alt={categorie.name}/>
        
         <CarouselCaption captionText={categorie.description} captionHeader={categorie.name} />
       </CarouselItem>

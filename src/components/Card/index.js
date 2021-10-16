@@ -1,9 +1,8 @@
 import React from "react";
 import Grid from "../Grid";
 
-import { Link } from "react-router-dom";
 
-import { Image, Detalhe } from './Card.styles';
+import { Image } from './Card.styles';
 
 
 const Card = props => (

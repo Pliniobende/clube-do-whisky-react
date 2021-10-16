@@ -1,16 +1,12 @@
 import React, { useContext } from "react";
-import { FaBars } from "react-icons/fa";
 import logo from "../../images/Logo.png";
 import {
   Nav,
   NavbarContainer,
-  NavbarLogo,
-  MobileIcon,
   NavMenu,
   NavItem,
   NavLinks,
   NavBtn,
-  NavBtnLink,
 } from "./Navbar.styles";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../providers/user";
