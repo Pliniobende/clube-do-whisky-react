@@ -25,24 +25,31 @@ function Avaliacao() {
             }
         }
         fetchRatings();
-
-    },[ratings])  
+    },[])  
 
     return (
-        <>
-            <div>
-            <span>{FaStar}</span>
-            <p>{average.avgRating}</p>
-            </div>
-            <div>
-            <ul>
-            {ratings.map((rating) =>{
+        <>  
+        <div>
+        <ul>
+        {ratings.map((rating) =>{
+            return(
                 <li key={rating.id}> {rating.rating} {rating.description}</li>
+            )
             })}
             </ul>
+            <div>
+             
+        {average.map((avg) =>{
+            return(
+                <div>
+                    <span><FaStar/></span>
+                    <p>{avg.avgRating}</p>
+                </div>
+                )
+            })}
             </div>
-        <FormAvaliacao />
-            
+            </div>
+        <FormAvaliacao />  
         </>
     )
 }

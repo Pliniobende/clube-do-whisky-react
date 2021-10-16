@@ -17,7 +17,7 @@ const Categorias = () => {
         }
         fetchBrands();
 
-    },[brands])  
+    },[])  
 
     return (
         <CategoriaDetalhes items={brands} />

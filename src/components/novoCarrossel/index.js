@@ -13,20 +13,7 @@ import categoria2 from '../../images/Categoria2.jpeg';
 import categoria3 from '../../images/Categoria3.jpeg';
 import categoria4 from '../../images/Categoria4.jpg';
 
-const items = [
-  {
-    src: categoria1
-  },
-  {
-    src: categoria2
-  },
-  {
-    src: categoria3
-  },
-  {
-    src: categoria4
-  }
-];
+
 
 const NovoCarrossel = (props) => {
 
@@ -46,7 +33,11 @@ const NovoCarrossel = (props) => {
   
   },[]) 
 
-
+  const items = [
+    {
+      id: categories.id
+    }
+  ];
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 

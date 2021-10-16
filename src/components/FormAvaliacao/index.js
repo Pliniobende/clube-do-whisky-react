@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from 'react';
 import { Formik, Form, Field } from 'formik';
 import FormRatings from 'form-ratings';
+import axios from 'axios';
 import './FormAvaliacao.css'
 
 const FormAvaliacao = () => {
@@ -13,6 +14,15 @@ const FormAvaliacao = () => {
     const [result, setResult] = useState(initialValues);
     const onSubmit = useCallback((values) => setResult(values), []);
     console.log(result)
+   /* onSubmit=async (values) => {
+      await axios.post('http://localhost:8080/api/v1/reviews/15', values)
+
+      .then (console.log(values))
+      .catch((err) => {
+          console.log(err)
+      });
+    }*/
+  
 
     return (
     <>
