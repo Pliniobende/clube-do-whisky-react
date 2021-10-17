@@ -16,6 +16,7 @@ export default () => {
         if (response.status === 201 && response.data.auth) {
           setUser({
             auth: response.data.auth,
+            id: response.data.id,
             name: response.data.name,
             email: response.data.email,
             token: response.data.token,
