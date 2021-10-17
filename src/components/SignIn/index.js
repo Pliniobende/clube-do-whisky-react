@@ -1,19 +1,19 @@
 import React, { useContext } from "react";
+import { Redirect } from "react-router-dom";
 import Form from "./Form";
-import usersServices from "../../services/users.services";
+import userServices from "../../services/users.services";
 import { UserContext } from "../../providers/user";
 
 const initialValues = {};
 
 export default () => {
-  const { setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
   const handleSubmit = (values) => {
-    usersServices
-      .signup(values)
+    userServices
+      .signin(values)
       .then((response) => {
-        console.log(response);
-        if (response.status === 201 && response.data.auth) {
+        if (response.status == 202 && response.data.auth) {
           setUser({
             auth: response.data.auth,
             id: response.data.id,
@@ -33,7 +33,11 @@ export default () => {
 
   return (
     <>
-      <Form handleSubmit={handleSubmit} initialValues={initialValues} />
+      {user.auth ? (
+        <Redirect to="/" />
+      ) : (
+        <Form handleSubmit={handleSubmit} initialValues={initialValues} />
+      )}
     </>
   );
 };

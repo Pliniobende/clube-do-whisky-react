@@ -1,0 +1,29 @@
+.DivForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 5%;
+}
+
+.DivForm div {
+  padding: 10px 0px;
+}
+
+.lbSignin {
+  background-color: black;
+  padding: 5px 10px;
+  color: white;
+  font-size: 1.5em;
+}
+
+@media (min-width: 1280px) {
+  .DivForm {
+    padding-left: 50%;
+  }
+}
+
+@media (max-width: 1279px) {
+  .DivForm {
+    padding-left: 10%;
+  }
+}
