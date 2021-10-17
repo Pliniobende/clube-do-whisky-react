@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState, useCallback } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Switch} from "react-router-dom";
 import NavbarPage from "./components/Navbar";
 import Manifesto from "./components/Manifesto";
 import Footer from "./components/Footer";
@@ -45,17 +45,22 @@ function App() {
       value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
     >
       <Router>
-        
-        <FormSignUp handleSubmit={handleSubmit} initialValues={initialValues} />
-   
-        <NavbarPage />
-        <NovoCarrossel />
-       
-        <Manifesto />
-        <Categorias />
-        <Avaliacao />
-        <Footer />
-        
+        <Switch>
+        <Route path="/" exact>
+          <NavbarPage />
+          <NovoCarrossel />
+          <Route>
+          <Manifesto  />
+          </Route>
+          <Categorias />
+          <Avaliacao />
+          <Footer />
+        </Route>
+        <Route path="/user/signup" exact>
+          <FormSignUp handleSubmit={handleSubmit} initialValues={initialValues} />
+        </Route>
+        <Redirect to="/" />
+        </Switch>
       </Router>
     </AuthConext.Provider>
   );
