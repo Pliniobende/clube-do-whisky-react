@@ -20,7 +20,7 @@ function Form({ handleSubmit, initialValues }) {
       >
         <FormikForm className="Form">
           <div>
-            <p className="FormTitle">Login</p>
+            <p className="FormTitle">Gerar nova senha</p>
           </div>
           <div className="DivForm">
             <div className="Form-Group">
