@@ -1,45 +1,55 @@
-.Form {
-    background-image: url("../../images/cadastroBackground.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    padding: 5rem 0;
+
+.FormWrapper{
+    display: flex;
+    align-items: center;
 }
+
+.FormWrapper img{
+    width: 150px;
+    height: 150px;
+    margin-left: 50px;
+}
+
 
 .Form-Group {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.2rem;
+    width: 600px;
 }
 
 .Form-Group2 {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     margin-bottom: 1.2rem;
 }
 
 .Form-Label {
-    background: #002233;
+    color: white;
     border: none;
-    width: 300px;
-    font-size: 1.5em;
+ 
+    font-size: 16px;
     padding: 0.7rem 1rem;
     transition: all .2s linear;
 }
 
 .Form-Field {
-    border: 1px solid #002233;
+
     width: 400px;
     height: 50px;
     font-size: 1.5em;
     padding: .5rem 1rem;
     transition: all .2s linear;
+    background-color: white;
+    border-radius: 50px;
 }
 
 .Form-Radio {
     border: 1px solid #002233;
-    width: 400px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     font-size: 0.5em;
     padding: .5rem 0;
     transition: all .2s linear;
@@ -52,9 +62,9 @@
 }
 
 .Form-Error {
-    color: whitesmoke;
+    color:red;
     font-size: 1em;
-    text-transform: uppercase;
+
     font-weight: bold;
     padding: .25rem 0;
 }
@@ -65,9 +75,9 @@
     font-weight: bold;
     text-transform: uppercase;
     border: none;
-    border-radius: 3px;
+    border-radius: 50px;
     margin-top: 1rem;
-    font-size: 1.8em;
+    font-size: 20px;
     padding: .5rem;
     transition: background .2s linear;
 }
