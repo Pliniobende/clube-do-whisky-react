@@ -50,16 +50,14 @@ const NavbarPage = () => {
 
   const handleToken = async () => {
     try {
-      const body = { name: "nome", email: "asmdk" }; //informacoes que serao enviadas no body. se nao for necessario fica o objeto vazio
-      const response = await usersServices.userData(body, user.token);
+      // const body = { name: "nome", email: "asmdk" }; => informacoes que serao enviadas no body
+      const id = 175;
+      const response = await usersServices.userData(id, user.token);
 
       switch (response.status) {
         case 200:
           console.log(response.data);
           break;
-
-        case 201:
-          alert("Redirect to /user/signin");
 
         default:
           alert("Falha... redirect to /user/sigin");

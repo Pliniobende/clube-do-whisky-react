@@ -14,7 +14,7 @@ class DataService {
   }
 
   userData(data, token) {
-    return api.get("/users/175", {
+    return api.get(`/users/${data}`, {
       headers: {
         Authorization: token,
       },
