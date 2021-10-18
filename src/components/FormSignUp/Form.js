@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./Form.css";
 import * as yup from "yup";
 import { ErrorMessage, Formik, Form as FormikForm, Field } from "formik";
+import logo from '../../images/Logo.png';
 
 const validations = yup.object().shape({
   name: yup
@@ -23,6 +24,8 @@ const validations = yup.object().shape({
 function Form({ handleSubmit, initialValues }) {
   return (
     <>
+    <div className="FormWrapper">
+    <img src={logo} alt='logo'/>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
@@ -95,6 +98,7 @@ function Form({ handleSubmit, initialValues }) {
         </FormikForm>
       </Formik>
       ;
+      </div>
     </>
   );
 }

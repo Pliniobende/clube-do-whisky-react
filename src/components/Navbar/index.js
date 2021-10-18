@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import logo from '../../images/Logo.png';
 import { Link, NavLink } from 'react-router-dom';
 import { Navbar, NavDropdown, Container, Nav, Button } from 'react-bootstrap';
@@ -6,8 +6,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css';
 import { UserContext } from "../../providers/user";
 
+
 const NavbarPage = () => {
   const { user } = useContext(UserContext);
+  const [categorie, setCategorie] = useState(false);
+  const onClick = () => setCategorie(true)
+
   return (
       <>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -19,7 +23,7 @@ const NavbarPage = () => {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/manifesto">Manifesto</Nav.Link>
               <NavDropdown title="Categoria" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="/bourbon">Bourbon</NavDropdown.Item>
+                <NavDropdown.Item href="bourbon">Bourbon</NavDropdown.Item>
                 <NavDropdown.Item href="/straightbourbon">Straight Bourbon</NavDropdown.Item>
                 <NavDropdown.Item href="/rye">Rye</NavDropdown.Item>
                 <NavDropdown.Item href="/ whiskeyescoces">Whiskey Escocês</NavDropdown.Item>
@@ -41,7 +45,6 @@ const NavbarPage = () => {
           </Navbar.Collapse>
           </Container>
         </Navbar>
-
       </>
   )
 }
