@@ -48,9 +48,35 @@ const NavbarPage = () => {
     }
   };
 
+  const handleToken = async () => {
+    try {
+      const body = { name: "nome", email: "asmdk" }; //informacoes que serao enviadas no body. se nao for necessario fica o objeto vazio
+      const response = await usersServices.userData(body, user.token);
+
+      switch (response.status) {
+        case 200:
+          console.log(response.data);
+          break;
+
+        case 201:
+          alert("Redirect to /user/signin");
+
+        default:
+          alert("Falha... redirect to /user/sigin");
+          break;
+      }
+    } catch (e) {
+      e.response ? alert(e.response.data) : alert(e);
+      alert("Falha na autenticacao redirect to /user/signin");
+    }
+  };
+
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <button onClick={handleToken} variant="dark">
+          req com token
+        </button>
         <Container>
           <Navbar.Brand href="#home">
             <img src={logo} alt="Logo" />

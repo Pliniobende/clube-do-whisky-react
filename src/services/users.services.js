@@ -12,6 +12,14 @@ class DataService {
   signout() {
     return api.post("/users/logout");
   }
+
+  userData(data, token) {
+    return api.get("/users/175", {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
 }
 
 export default new DataService();
