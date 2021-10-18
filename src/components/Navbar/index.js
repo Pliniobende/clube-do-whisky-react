@@ -41,7 +41,7 @@ const NavbarPage = () => {
           email: response.data.email,
           token: response.data.token,
         });
-        localStorage.removeItem("user");
+        sessionStorage.removeItem("user");
       }
     } catch (e) {
       alert(e);

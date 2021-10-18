@@ -21,7 +21,7 @@ export default () => {
             email: response.data.email,
             token: response.data.token,
           });
-          localStorage.setItem("user", JSON.stringify(response.data));
+          sessionStorage.setItem("user", JSON.stringify(response.data));
         } else {
           response.data ? alert(response.data) : alert(response);
         }

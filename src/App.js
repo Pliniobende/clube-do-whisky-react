@@ -75,7 +75,7 @@ function App() {
             <Footer />
           </Router>
 
-          {/* <Redirect to="/" /> */}
+          <Redirect to="/" />
         </Switch>
       </Router>
     </AuthConext.Provider>

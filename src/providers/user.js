@@ -6,7 +6,7 @@ export const UserProvider = (props) => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    const userStorage = localStorage.getItem("user");
+    const userStorage = sessionStorage.getItem("user");
     if (userStorage) {
       setUser(JSON.parse(userStorage));
     } else {
