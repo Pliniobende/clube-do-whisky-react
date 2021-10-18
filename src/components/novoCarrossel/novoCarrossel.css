@@ -1,0 +1,19 @@
+
+.carousel.slide{
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-inner{
+    display: flex;
+    height: 600px;
+}
+
+
+.carousel.slide >.carousel-inner > .carousel-item img{
+    display: flex;
+    align-items: center;
+    height: 500px;
+    object-fit: cover;
+    margin: 0 auto;    
+}
