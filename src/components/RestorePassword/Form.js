@@ -1,6 +1,4 @@
 import React from "react";
-import "./Signin.css";
-import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import * as yup from "yup";
 import { ErrorMessage, Formik, Form as FormikForm, Field } from "formik";
@@ -10,10 +8,6 @@ const validations = yup.object().shape({
     .string()
     .email("Informe um e-mail válido")
     .required("O e-mail deve ser informado"),
-  password: yup
-    .string()
-    .min(4, "A senha deve ter ao menos 4 caracteres")
-    .required("A senha do usuário deve ser informada"),
 });
 
 function Form({ handleSubmit, initialValues }) {
@@ -37,18 +31,6 @@ function Form({ handleSubmit, initialValues }) {
                 component="span"
                 name="email"
               />
-            </div>
-            <div className="Form-Group">
-              <label className="lbSignin">Senha do Usuário: </label>
-              <Field className="Form-Field" name="password" type="password" />
-              <ErrorMessage
-                className="Form-Error"
-                component="span"
-                name="password"
-              />
-            </div>
-            <div className="Form-Group">
-              <NavLink to="/user/restore">Esqueci senha...</NavLink>
             </div>
             <br />
             <button className="btLogin" type="submit">

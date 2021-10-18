@@ -20,6 +20,10 @@ class DataService {
       },
     });
   }
+
+  restorePassword(data) {
+    return api.post("/users/restore", data);
+  }
 }
 
 export default new DataService();
