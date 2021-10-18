@@ -8,7 +8,6 @@ import { AuthConext } from "./context/auth-context";
 
 import FormSignUp from "./components/FormSignUp";
 import usersServices from "./services/users.services";
-import Avaliacao from "./components/Avaliacao";
 import NovoCarrossel from "./components/novoCarrossel";
 import Categorias from "./components/Categorias";
 
@@ -53,7 +52,6 @@ function App() {
           <Manifesto  />
           </Route>
           <Categorias />
-          <Avaliacao />
           <Footer />
         </Route>
         <Route path="/user/signup" exact>

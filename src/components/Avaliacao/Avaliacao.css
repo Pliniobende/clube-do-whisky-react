@@ -1,0 +1,21 @@
+.star{
+    color: yellow;
+}
+.ratings{
+    padding: 20px;
+}
+
+.ratinglist{
+    color: white;
+    
+}
+
+.ratinglist ul, li{
+    list-style-type: none;
+}
+
+.avgrating{
+    color: white;
+    font-weight: bold;
+}
+

@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const Image = styled.img`
     width: 100%;
-    max-width: 720px;
+    max-width: 700px;
     transition: all 0.3s;
     object-fit: cover;
     border-radius: 20px;
     animation: animatedThumb 0.5s;
+    margin: 20px;
 
     :hover{
         opacity: 0.8;

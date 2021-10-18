@@ -15,12 +15,14 @@ const FormAvaliacao = () => {
     const [result, setResult] = useState(initialValues);
     /*const onSubmit = useCallback((values) => setResult(values), []);
     console.log(result)*/
-    const onSubmit=async (values) => {
-      await axios.post('http://localhost:8080/api/v1/reviews/15', {values, userId:auth.id, brandId:15} )
-      .then (console.log(values))
+    const onSubmit= async (values) => {
+      const newvalues = {rating: values.rating, description: values.description,  userId:1, brandId:5}
+      await axios.post('http://localhost:8080/api/v1/reviews/5', newvalues)
+      .then (console.log(newvalues))
       .catch((err) => {
           console.log(err)
       });
+      console.log(newvalues)
     }
     return (
     <>

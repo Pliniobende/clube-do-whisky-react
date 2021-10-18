@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { FaStar } from 'react-icons/fa';
-
+import './Avaliacao.css'
 import FormAvaliacao from '../FormAvaliacao';
 
 function Avaliacao() {
@@ -27,13 +27,23 @@ function Avaliacao() {
         fetchRatings();
     },[])  
 
+    if(ratings.length == 0){
+        return(
+        <p> Nenhuma avaliação encontrada</p>
+        )
+    }
     return (
         <>  
-        <div>
-        <ul>
+        <FormAvaliacao /> 
+      
+        <div className='ratings'>
+        <ul className='ratinglist'>
+  
         {ratings.map((rating) =>{
             return(
-                <li key={rating.id}> {rating.rating} {rating.description}</li>
+                <div className='ratingdata'>
+                <li key={rating.id}> <p>Nota: {rating.rating}</p> <p>Avaliação:</p> <p>{rating.description}</p></li>
+                </div>
             )
             })}
             </ul>
@@ -42,14 +52,14 @@ function Avaliacao() {
         {average.map((avg) =>{
             return(
                 <div>
-                    <span><FaStar/></span>
-                    <p>{avg.avgRating}</p>
+                    <span className='star'><FaStar/></span>
+                    <span className='avgrating'> Nota média: {Math.round(avg.avgRating).toFixed(1)} </span>
                 </div>
                 )
             })}
             </div>
             </div>
-        <FormAvaliacao />  
+    
         </>
     )
 }

@@ -11,6 +11,10 @@ export const Content = styled.div `
     max-width: 100vw;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-   
     grid-gap: 5rem;
+   
+    .p{
+        color: red;
+    }
+
 `;
