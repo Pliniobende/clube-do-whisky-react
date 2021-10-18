@@ -13,6 +13,14 @@ class DataService {
     return api.post("/users/logout");
   }
 
+  updateUser(data, token) {
+    return api.put("/users", data, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
+
   userData(data, token) {
     return api.get(`/users/${data}`, {
       headers: {

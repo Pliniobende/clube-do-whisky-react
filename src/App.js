@@ -13,6 +13,7 @@ import { AuthConext } from "./context/auth-context";
 
 import Signin from "./components/SignIn";
 import FormSignUp from "./components/FormSignUp";
+import UpdateUser from "./components/UpdateUser";
 import RestorePassword from "./components/RestorePassword";
 import usersServices from "./services/users.services";
 import Avaliacao from "./components/Avaliacao";
@@ -72,6 +73,12 @@ function App() {
 
           <Router path="/user/signin">
             <Signin />
+
+            <Footer />
+          </Router>
+
+          <Router path="/user/update">
+            <UpdateUser />
 
             <Footer />
           </Router>
